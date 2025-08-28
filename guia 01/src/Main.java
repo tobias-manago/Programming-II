@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        /*
+
         //punto 1
         Empleado empleado1 = new Empleado(23456345,"Carlos","Gutiérrez",25000);
         Empleado empleado2 = new Empleado(34234123,"Ana","Sánchez",27500);
@@ -18,7 +18,6 @@ public class Main {
         banco1.sustraccion(30000);
         banco1.mostrarDatosBanco();
 
-
         //punto 3
         Libro libro1 = new Libro("El Quijote","Miguel de Cervantes",500,10);
         Libro libro2 = new Libro("Cien años de soledad","Gabriel García Márquez",700,5);
@@ -29,7 +28,6 @@ public class Main {
         libro2.vender(8);
         libro2.comprar(5);
         libro2.mostrarDatosLibro();
-        */
 
         //punto 4
         int elegir;
@@ -67,14 +65,14 @@ public class Main {
                     ToF = true;
                     break;
                 case 2:
-                    if (ToF == true) {
+                    if (ToF) {
                     item1.mostrarDatosItemVenta();
                     } else {
                         System.out.println("No se han ingresado datos del item de venta.");
                     }
                     break;
                 case 3:
-                    if (ToF == true) {
+                    if (ToF) {
                     System.out.println("Ingrese la nueva cantidad:");
                     int nuevaCantidad = scanner.nextInt();
                     item1.setCantidad(nuevaCantidad);
@@ -84,7 +82,7 @@ public class Main {
                     }
                     break;
                 case 4:
-                    if (ToF == true) {
+                    if (ToF) {
                     System.out.println("Ingrese el nuevo precio unitario:");
                     double nuevoPrecio = scanner.nextDouble();
                     item1.setPrecioUnitario(nuevoPrecio);
@@ -94,7 +92,7 @@ public class Main {
                     }
                     break;
                 case 5:
-                    if (ToF == true) {
+                    if (ToF) {
                     double precioTotal = item1.calcularPrecioTotal();
                     System.out.println("El precio total del item de venta es: " + precioTotal);
                     } else {
