@@ -2,6 +2,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        /*
         int opcion;
         Scanner scanner = new Scanner(System.in);
         do {
@@ -56,5 +57,72 @@ public class Main {
             }
 
         } while (opcion != 0);
+        */
+        int opcion1;
+        Scanner scanner1 = new Scanner(System.in);
+        System.out.println("Bienvenido al sistema de gestion de Libros");
+        do {
+            System.out.println("Seleccione una opcion:");
+            System.out.println("1. Agregar Autor");
+            System.out.println("2. Agregar Libro y su Autor");
+            System.out.println("3.agregar Libro a autor existente");
+            System.out.println("0. Salir");
+            opcion1 = scanner1.nextInt();
+            switch (opcion1) {
+                case 1:
+                    scanner1.nextLine();
+                    System.out.println("Ingrese el nombre del autor:");
+                    String nombreAutor = scanner1.nextLine();
+                    System.out.println("Ingrese el apellido del autor:");
+                    String ApellidoAutor = scanner1.nextLine();
+                    System.out.println("Ingrese el email del autor:");
+                    String EmailAutor = scanner1.nextLine();
+                    System.out.println("Ingrese el genero del autor (M/F):");
+                    String GeneroAutor = scanner1.nextLine();
+                    Autor autor = new Autor(nombreAutor, ApellidoAutor, EmailAutor,GeneroAutor);
+                    System.out.println("Autor agregado: Nombre " + autor.getNombre() + " Apellido: " + autor.getApellido() + " email: " + autor.getEmail() + " sexo: " + (autor.getGenero() == "M" ? "Hombre" : "Mujer"));
+                    break;
+                case 2:
+                    scanner1.nextLine();
+                    System.out.println("Ingrese el nombre del autor:");
+                    String nombreAutorL = scanner1.nextLine();
+                    System.out.println("Ingrese el apellido del autor:");
+                    String ApellidoAutorL = scanner1.nextLine();
+                    System.out.println("Ingrese el email del autor:");
+                    String EmailAutorL = scanner1.nextLine();
+                    System.out.println("Ingrese el genero del autor (M/F):");
+                    String GeneroAutorL = scanner1.nextLine();
+                    System.out.println("Ingrese el titulo del libro:");
+                    String tituloLibro = scanner1.nextLine();
+                    System.out.println("Ingrese el precio del libro:");
+                    double precioLibro = scanner1.nextDouble();
+                    System.out.println("Ingrese el stock del libro:");
+                    int stockLibro = scanner1.nextInt();
+                    Libro libro = new Libro(nombreAutorL, ApellidoAutorL, EmailAutorL, tituloLibro, GeneroAutorL, precioLibro, stockLibro);
+                    System.out.println("Libro agregado: Titulo " + libro.getTitulo() + " Autor: " + libro.getNombre() + " " + libro.getApellido() + " email: " + libro.getEmail() + " precio: " + libro.getPrecio() + " stock: " + libro.getStock());
+                    break;
+                case 3:
+                    //esta opcion es para agregar un libro a un autor ya existente
+                    if (autor != null) {
+                        scanner1.nextLine();
+                        System.out.println("Ingrese el título del libro:");
+                        String tituloLibro = scanner1.nextLine();
+                        System.out.println("Ingrese el precio del libro:");
+                        double precioLibro = scanner1.nextDouble();
+                        System.out.println("Ingrese el stock del libro:");
+                        int stockLibro = scanner1.nextInt();
+                        Libro libro = new Libro(autor.getNombre(), autor.getApellido(), autor.getEmail(), autor.getGenero(), tituloLibro, precioLibro, stockLibro);
+                        System.out.println("Libro agregado al autor existente.");
+                    } else {
+                        System.out.println("Primero debe agregar un autor.");
+                    }
+                case 0:
+                    System.out.println("Saliendo del sistema...");
+                    break;
+                default:
+                    System.out.println("Opcion no valida");
+            }
+
+        }while (opcion1 != 0);
     }
 }
