@@ -80,7 +80,7 @@ public class Main {
                     System.out.println("Ingrese el genero del autor (M/F):");
                     String GeneroAutor = scanner1.nextLine();
                     Autor autor = new Autor(nombreAutor, ApellidoAutor, EmailAutor,GeneroAutor);
-                    System.out.println("Autor agregado: Nombre " + autor.getNombre() + " Apellido: " + autor.getApellido() + " email: " + autor.getEmail() + " sexo: " + (autor.getGenero() == "M" ? "Hombre" : "Mujer"));
+                    System.out.println("Autor agregado: Nombre " + autor.getNombre() + " Apellido: " + autor.getApellido() + " email: " + autor.getEmail() + " sexo: " + (autor.getGenero().equals("M") ? "Hombre" : "Mujer"));
                     break;
                 case 2:
                     scanner1.nextLine();
@@ -102,20 +102,7 @@ public class Main {
                     System.out.println("Libro agregado: Titulo " + libro.getTitulo() + " Autor: " + libro.getNombre() + " " + libro.getApellido() + " email: " + libro.getEmail() + " precio: " + libro.getPrecio() + " stock: " + libro.getStock());
                     break;
                 case 3:
-                    //esta opcion es para agregar un libro a un autor ya existente
-                    if (autor != null) {
-                        scanner1.nextLine();
-                        System.out.println("Ingrese el título del libro:");
-                        String tituloLibro = scanner1.nextLine();
-                        System.out.println("Ingrese el precio del libro:");
-                        double precioLibro = scanner1.nextDouble();
-                        System.out.println("Ingrese el stock del libro:");
-                        int stockLibro = scanner1.nextInt();
-                        Libro libro = new Libro(autor.getNombre(), autor.getApellido(), autor.getEmail(), autor.getGenero(), tituloLibro, precioLibro, stockLibro);
-                        System.out.println("Libro agregado al autor existente.");
-                    } else {
-                        System.out.println("Primero debe agregar un autor.");
-                    }
+
                 case 0:
                     System.out.println("Saliendo del sistema...");
                     break;

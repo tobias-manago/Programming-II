@@ -2,14 +2,14 @@ public class Autor{
     private String nombre;
     private String apellido;
     private String email;
-    private String genero; // 'M' o 'F'
+    private String Sexo; // 'M' o 'F'
 
     //atributos
     public Autor(String nombre, String apellido, String email, String genero){
         this.nombre = nombre;
         this.apellido = apellido;
         this.email = email;
-        this.genero = genero;
+        this.Sexo = genero;
     }
 
     //constructor
@@ -26,7 +26,7 @@ public class Autor{
     }
 
     public String getGenero(){
-        return genero;
+        return Sexo;
     }
 
     public String setNombre(String nombre){
@@ -42,7 +42,7 @@ public class Autor{
     }
 
     public String setGenero(String genero){
-        return this.genero = genero;
+        return this.Sexo = genero;
     }
     //getters y setters
 
