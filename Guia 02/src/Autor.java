@@ -1,49 +1,51 @@
-public class Autor{
+public class Autor {
     private String nombre;
     private String apellido;
     private String email;
-    private String Sexo; // 'M' o 'F'
+    private String genero; //‘M’ o ‘F’
 
-    //atributos
-    public Autor(String nombre, String apellido, String email, String genero){
-        this.nombre = nombre;
+    public Autor(String apellido, String email, String genero, String nombre) {
         this.apellido = apellido;
         this.email = email;
-        this.Sexo = genero;
+        this.genero = genero;
+        this.nombre = nombre;
     }
 
-    //constructor
-    public String getNombre(){
-        return nombre;
-    }
-
-    public String getApellido(){
+    public String getApellido() {
         return apellido;
     }
 
-    public String getEmail(){
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
+    }
+
+    public String getEmail() {
         return email;
     }
 
-    public String getGenero(){
-        return Sexo;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public String setNombre(String nombre){
-        return this.nombre = nombre;
+    public String getGenero() {
+        return genero;
     }
 
-    public String setApellido(String apellido){
-        return this.apellido = apellido;
+    public void setGenero(String genero) {
+        this.genero = genero;
     }
 
-    public String setEmail(String email){
-        return this.email = email;
+    public String getNombre() {
+        return nombre;
     }
 
-    public String setGenero(String genero){
-        return this.Sexo = genero;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
-    //getters y setters
-
+    //getters & setters
+    @Override
+    public String toString() {
+        return nombre + " " + apellido + " (" + genero + ") - " + email;
+    }
+    //metodos
 }

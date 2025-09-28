@@ -1,23 +1,21 @@
 public class EmpleadoTC extends Empleado {
     //esta es la clase Empleado tiempo completo
-    private int DiasTrabajados;
-    private double PagoPorDia;
+    private final int DiasTrabajados;
     //atributos
-
-    public EmpleadoTC(String nombre, double salario, int DiasTrabajados) {
-        super(nombre, salario);
-        this.PagoPorDia = (int) (salario * 8);
-        this.DiasTrabajados = DiasTrabajados;
+    public EmpleadoTC(double salario, String nombre, int diasTrabajados) {
+        super(salario, nombre);
+        DiasTrabajados = diasTrabajados;
     }
-
     //constructor
-
-
-    //metodos
-
-
     @Override
     public double calcularSalario() {
-        return PagoPorDia * DiasTrabajados;
+        return salario*DiasTrabajados;
     }
+    @Override
+    public void mostrarEmpleado() {
+        System.out.println("Nombre: " + nombre);
+        System.out.println("Dias Trabajados: " + DiasTrabajados);
+        System.out.println("Sueldo: " + calcularSalario());
+    }
+    //metodos
 }

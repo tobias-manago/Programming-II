@@ -1,26 +1,13 @@
-public class Empleado {
+public abstract class Empleado {
     //esta es la clase base abstracta
-    private String nombre;
-    private double salario;
-
+    protected String nombre;
+    protected double salario;
     //atributos
-
-    public Empleado(String nombre, double salario) {
-        this.nombre = nombre;
+    protected Empleado(double salario, String nombre) {
         this.salario = salario;
+        this.nombre = nombre;
     }
-
-    //constructor
-
-    public double calcularSalario() {
-        return salario;
-    }
-
-    //metodo abstracto
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    //getter
+    public abstract double calcularSalario();
+    public abstract void mostrarEmpleado();
+    //metodos abstractos
 }
