@@ -1,7 +1,9 @@
 import java.util.Scanner;
+import java.math.BigDecimal;
 
 public class Main {
     public static void main(String[] args) {
+        /*
         int opcion;
         Scanner scanner = new Scanner(System.in);
         do {
@@ -25,8 +27,7 @@ public class Main {
                     EmpleadoTC empleadoTC = new EmpleadoTC(salarioTC, nombreTC, diasTrabajadosTC);
                     System.out.println("desea mostrar al empleado [S/N]");
                     scanner.nextLine(); // Limpiar el buffer antes de leer la respuesta
-                    if(scanner.nextLine().equalsIgnoreCase("S"))
-                    {
+                    if (scanner.nextLine().equalsIgnoreCase("S")) {
                         empleadoTC.mostrarEmpleado();
                     }
                     break;
@@ -41,8 +42,7 @@ public class Main {
                     EmpleadoPH empleadoPH = new EmpleadoPH(salarioPH, nombrePH, horasTrabajadasPH);
                     System.out.println("desea mostrar al empleado [S/N]");
                     scanner.nextLine(); // Limpiar el buffer antes de leer la respuesta
-                    if(scanner.nextLine().equalsIgnoreCase("S"))
-                    {
+                    if (scanner.nextLine().equalsIgnoreCase("S")) {
                         empleadoPH.mostrarEmpleado();
                     }
                     break;
@@ -59,8 +59,7 @@ public class Main {
                     EmpleadoContratista empleadoC = new EmpleadoContratista(salarioC, nombreC, horasTrabajadasC, tarifaPorProyectoC);
                     System.out.println("desea mostrar al empleado [S/N]");
                     scanner.nextLine(); // Limpiar el buffer antes de leer la respuesta
-                    if(scanner.nextLine().equalsIgnoreCase("S"))
-                    {
+                    if (scanner.nextLine().equalsIgnoreCase("S")) {
                         empleadoC.mostrarEmpleado();
                     }
                     break;
@@ -91,5 +90,41 @@ public class Main {
                 autorDelLibro.getGenero() + ")");
 
         libro.imprimirMensajeVenta();
+        //-------------------------------------------------------------------------------------------------------------
+        Cliente cliente = new Cliente("Juan Pérez", "juan.perez@mail.com", 10.0);
+        System.out.println(cliente);
+
+        BigDecimal montoTotal = BigDecimal.valueOf(1000.00);
+        Factura factura = new Factura(montoTotal, cliente);
+
+        System.out.println("Monto total (sin descuento): " + factura.getMonto().toPlainString());
+        System.out.println("Monto final (con descuento): " + factura.calcularMontoFinal().toPlainString());
+
+        factura.imprimir();
+        scanner.close();
+
+        System.out.println("Antes de crear el cilindro");
+        Cilindro c = new Cilindro();
+        System.out.println("Después de crear el cilindro\n");
+
+        System.out.println("Radio del cilindro: " + c.getRadio());
+        System.out.println("Altura del cilindro: " + c.getAltura());
+        System.out.println("Área de la base: " + c.calcularAreaBase());
+        System.out.println("Volumen: " + c.calcularvolumen());
+
+        System.out.println(c.toString());
+        System.out.println("--------------------------------------------------");
+        System.out.println("segundo cilindro");
+        Cilindro c2 = new Cilindro(6,"oro",12);
+
+        System.out.println("Radio del cilindro: " + c2.getRadio());
+        System.out.println("Altura del cilindro: " + c2.getAltura());
+        System.out.println("Área de la base: " + c2.calcularAreaBase());
+        System.out.println("Volumen: " + c2.calcularvolumen());
+        */
+        Estudiante estudiante = new Estudiante(47231123,"Tobias","Manago","Tqmanago@gmail.com","Ayolas 6642",2025,80000,"Programacion");
+        Estudiante estudiante2 = new Estudiante(47231124,"Juan","Perez","juanpi@gmail.com","magallanes 6919",2024,75000,"Redes");
+        Estudiante estudiante3 = new Estudiante(47231125,"Maria","Gonzalez","marigon@gmail.com","san lorenzo 1234",2023,90000,"ingenieria de sistemas");
+        Estudiante estudiante4 = new Estudiante(47231126,"Ana","Lopez","anitaMaxWinn@gmail.com","cordoba 5678",2025,85000,"Seguridad Informatica");
     }
 }
